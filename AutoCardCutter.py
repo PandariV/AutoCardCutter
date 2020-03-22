@@ -1,22 +1,14 @@
 # Automatic Policy Debate card cutting bot - Made by Virinch Pandari
-# This program has 2 modes: cut one card given a url, or cut any # of cards given a term
 # required installs: requests, beautifulsoup4
 
 import requests
 from googlesearch import search
 from bs4 import BeautifulSoup
 
-query = input("Enter a url or search term: ")
+query = input("Enter a search term: ") + " site:cnn.com"
+numb = int(input("Enter # of desired cards: "))
 
-if query.find("www.") == -1:
-    query += " site:cnn.com"
-    numb = int(input("Enter # of desired cards: "))
-    searches = search(query, tld="com", num=numb, stop=numb, pause=2)
-else:
-    query = query[0:query.find(" ")]
-    if query.find("http") == -1:
-        query = "https://" + query
-    searches = [query]
+searches = search(query, tld="com", num=numb, stop=numb, pause=2)
 
 articles = []
 counter = 0
