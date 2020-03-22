@@ -52,7 +52,7 @@ try:
     for article in articles:
         indexA = article.author.index(" ") + 1
         indexD = article.date.index(", 20") + 4
-        f.write("*ADD A TAG HERE*\n"
+        f.write(article.title + "\n"
                 + article.author[indexA:len(article.author)] + " " + article.date[indexD:len(article.date)] + " (" + article.author + ", " + article.date + ", " + article.title + ", CNN News, From " + article.url + ", VP)\n"
                 + article.text + "\n\n")
 finally:
