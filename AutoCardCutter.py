@@ -30,7 +30,7 @@ for search in searches:
     if len(textResults) > 0:
         text = ""
         for result in textResults:
-            text += result.text
+            text += result.text + " "
         try:
             title = soup.find(class_="pg-headline").text
             date = soup.find(class_="update-time").text
