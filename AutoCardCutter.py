@@ -1,10 +1,8 @@
-# required pip installs: python-docx, beautifulsoup4,
+# required pip installs: requests, beautifulsoup4,
 
 import requests
 from googlesearch import search
 from bs4 import BeautifulSoup
-from docx import Document
-from docx.shared import Inches
 
 query = input("Enter a search term: ") + " cnn"
 numb = int(input("Enter # of desired cards: "))
