@@ -4,7 +4,7 @@ import requests
 from googlesearch import search
 from bs4 import BeautifulSoup
 
-query = input("Enter a search term: ") + " cnn"
+query = input("Enter a search term: ") + " site:cnn.com"
 numb = int(input("Enter # of desired cards: "))
 
 searches = search(query, tld="com", num=numb, stop=numb, pause=2)
