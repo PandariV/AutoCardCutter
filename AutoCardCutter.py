@@ -1,4 +1,5 @@
-# required pip installs: requests, beautifulsoup4,
+# Automatic Policy Debate card cutting bot - Made by Virinch Pandari
+# required installs: requests, beautifulsoup4
 
 import requests
 from googlesearch import search
@@ -57,6 +58,5 @@ try:
                 + article.text + "\n\n")
 finally:
     f.close()
-
 
 print("\nTASK FINISHED: I was able to cut " + str(counter) + " card(s)")
