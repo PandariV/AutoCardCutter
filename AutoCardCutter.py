@@ -44,19 +44,15 @@ for search in searches:
         finally:
             continue
 
-f = open("cards.txt", "w")
-f.write("")
-f.close()
+with open("cards.txt", "w") as f:
+    f.write("")
 
-f = open("cards.txt", "a")
-try:
+with open("cards.txt", "a") as f:
     for article in articles:
         indexA = article.author.index(" ") + 1
         indexD = article.date.index(", 20") + 4
-        f.write(article.title + "\n"
-                + article.author[indexA:len(article.author)] + " " + article.date[indexD:len(article.date)] + " (" + article.author + ", " + article.date + ", " + article.title + ", CNN News, From " + article.url + ", VP)\n"
-                + article.text + "\n\n")
-finally:
-    f.close()
+        f.write(f"{article.title}\n"
+                + f"{article.author[indexA:len(article.author)]} {article.date[indexD:len(article.date)]} ({article.author}, {article.date}, {article.title}, CNN News, From {article.url}, VP)\n"
+                + f"{article.text}\n\n")
 
 print("\nTASK FINISHED: I was able to cut " + str(counter) + " card(s)")
