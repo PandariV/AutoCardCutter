@@ -45,9 +45,6 @@ for search in searches:
             continue
 
 with open("cards.txt", "w") as f:
-    f.write("")
-
-with open("cards.txt", "a") as f:
     for article in articles:
         indexA = article.author.index(" ") + 1
         indexD = article.date.index(", 20") + 4
